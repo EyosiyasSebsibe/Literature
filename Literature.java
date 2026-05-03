@@ -35,4 +35,17 @@ class Author extends Literature {
         System.out.println("Author's Literature");
     }
 }
+
+
+
+class Shakespeare extends Author {
+    Shakespeare(String title){
+        super(title, "William Shakespeare");
+    }
+    @Override
+    void display(){
+        super.display();
+        System.out.println("Masterpiece");
+    }
+}
     
