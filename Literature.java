@@ -49,3 +49,18 @@ class Shakespeare extends Author {
     }
 }
     
+
+
+
+
+class Poet extends Literature {
+   Poet(String title) {
+    super(title);
+   }
+
+    @Override
+    void display() {
+        super.display();
+        System.out.println("Poem title: " + title);
+    }
+}
