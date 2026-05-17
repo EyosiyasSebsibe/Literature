@@ -49,7 +49,7 @@ class Shakespeare extends Author {
         super(title, "William Shakespeare");
     }
     @Override
-    void display(){
+    public void display(){
         super.display();
         System.out.println("Category: Shakespearean Literature");
     }
@@ -82,21 +82,41 @@ final class English{
 
 public class Main {
     public static void main(String[] args) {
-        Literature literature = new Literature("General Literature");
-        literature.display();
-        Literature.category();
+        Scanner sc = new Scanner(System.in);
 
-        Author author = new Author("Hamlet", "William Shakespeare");
-        author.display();
-        Author.category();
+        ArrayList<Literature> library = new ArrayList<>();
 
-        Shakespeare shakespeare = new Shakespeare("Romeo and Juliet");
-        shakespeare.display();
+        try{
+            System.out.print("Enter a work by shakespeare: ");
+            String play = sc.nextLine();
 
-        Poet poet = new Poet("The Raven");
-        poet.display();
+            System.out.print("Enter poem title: ");
+            String poem = sc.nextLine();
 
-        English english = new English();
-        english.rules();
+          
+            Literature l1 = new Shakespeare(play);
+            Literature l2 = new Poet(poem);
+
+            library.add(l1);
+            library.add(l2);
+
+            System.out.println("\n--- Literature Collection ---");
+
+            for (Literature item : library) {
+
+                item.display();
+                System.out.println();
+            }
+
+       
+            English rules = new English();
+            rules.rules();
+
+        } catch (Exception e) {
+
+            System.out.println("An error occurred!");
+        }
+
+        sc.close();
     }
 }
