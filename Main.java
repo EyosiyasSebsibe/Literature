@@ -19,7 +19,7 @@ abstract class Literature {
     public String getTitle() {
         return title;
     }
-    public static void setTitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 }
@@ -29,32 +29,29 @@ abstract class Literature {
 class Author extends Literature {
     protected String name;
 
-    Author(String title, String name) {
+   public Author(String title, String name) {
         super(title);
         this.name = name;
     }
 
     @Override
-    void display() {
-        super.display();
+   public void display() {
+        System.out.println("Title: " + getTitle());
         System.out.println("Author: " + name);
-    }
-
-    static void category() {
-        System.out.println("Author's Literature");
     }
 }
 
 
 
 class Shakespeare extends Author {
-    Shakespeare(String title){
+
+   public Shakespeare(String title){
         super(title, "William Shakespeare");
     }
     @Override
     void display(){
         super.display();
-        System.out.println("Masterpiece");
+        System.out.println("Category: Shakespearean Literature");
     }
 }
     
@@ -63,14 +60,13 @@ class Shakespeare extends Author {
 
 
 class Poet extends Literature {
-   Poet(String title) {
+   public Poet(String title) {
     super(title);
    }
 
     @Override
-    void display() {
-        super.display();
-        System.out.println("Poem title: " + title);
+    public void display(){
+        System.out.println("Poem title: " + getTitle());
     }
 }
 
