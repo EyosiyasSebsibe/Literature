@@ -1,16 +1,26 @@
-class Literature {
-    protected String title;
 
-    Literature(String title) {
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+abstract class Literature {
+
+    private String title;
+
+    public Literature(String title) {
         this.title = title;
     }
 
-    void display(){
+    public void display(){
         System.out.println("Title: " + title);  
     }
 
-    static void category(){
-        System.out.println("General Literature");
+    public String getTitle() {
+        return title;
+    }
+    public static void setTitle(String title) {
+        this.title = title;
     }
 }
 
